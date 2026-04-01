@@ -1,0 +1,333 @@
+:root {
+    --color-bg: #f6f8fb;
+    --color-surface: #ffffff;
+    --color-text: #10233f;
+    --color-muted: #4c607a;
+    --color-border: #d8e0ea;
+    --color-primary: #0f5bd8;
+    --color-primary-dark: #0a46aa;
+    --color-highlight: #08a88a;
+    --shadow-soft: 0 12px 30px rgba(16, 35, 63, 0.08);
+    --max-width: 1120px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+}
+
+body {
+    margin: 0;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    color: var(--color-text);
+    background:
+        radial-gradient(circle at 90% 0%, rgba(15, 91, 216, 0.12) 0, rgba(15, 91, 216, 0) 40%),
+        radial-gradient(circle at 10% 20%, rgba(8, 168, 138, 0.1) 0, rgba(8, 168, 138, 0) 28%),
+        var(--color-bg);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.skip-link {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--space-1) var(--space-2);
+    border-radius: 0 0 var(--radius-md) 0;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    background-color: rgba(246, 248, 251, 0.9);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    min-height: 5rem;
+    padding: 0 var(--space-3);
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-3);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+.logo img {
+    height: 3rem;
+    width: auto;
+}
+
+.company-name {
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 1.35rem;
+    color: var(--color-text);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+.nav-links a {
+    font-weight: 700;
+    color: var(--color-muted);
+    padding: 0.35rem 0.1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 180ms ease, border-color 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-surface);
+    width: 2.75rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 1rem;
+    height: 2px;
+    background: var(--color-text);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.7rem 1.2rem;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    border-color: var(--color-border);
+    color: var(--color-text);
+    background: var(--color-surface);
+}
+
+main,
+.page-main {
+    flex: 1;
+}
+
+.hero,
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-3);
+}
+
+.hero {
+    padding-top: 5.5rem;
+    text-align: left;
+}
+
+.eyebrow {
+    margin-bottom: var(--space-2);
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--color-highlight);
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Sora", "Segoe UI", sans-serif;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    max-width: 18ch;
+    margin-bottom: var(--space-2);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    margin-bottom: var(--space-2);
+}
+
+.lead {
+    color: var(--color-muted);
+    font-size: 1.12rem;
+    max-width: 62ch;
+}
+
+.hero-actions {
+    margin-top: var(--space-4);
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.section {
+    padding-top: var(--space-5);
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.two-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-soft);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-1);
+}
+
+.card p {
+    color: var(--color-muted);
+}
+
+.list {
+    list-style: disc;
+    padding-left: 1.2rem;
+    color: var(--color-muted);
+}
+
+.list li + li {
+    margin-top: 0.35rem;
+}
+
+.cta-block {
+    text-align: center;
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-6);
+}
+
+.cta-block p {
+    max-width: 60ch;
+    margin: 0 auto var(--space-3);
+    color: var(--color-muted);
+}
+
+.site-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-3);
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 960px) {
+    .site-nav {
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    .nav-links,
+    .nav-cta {
+        display: none;
+    }
+
+    .site-nav.menu-open .nav-links {
+        display: flex;
+        position: absolute;
+        left: var(--space-2);
+        right: var(--space-2);
+        top: 4.4rem;
+        border: 1px solid var(--color-border);
+        background: var(--color-surface);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-soft);
+        flex-direction: column;
+        padding: var(--space-2);
+        z-index: 20;
+    }
+
+    .site-nav.menu-open .nav-links a {
+        border-bottom: 0;
+        padding: 0.5rem;
+    }
+
+    .two-up,
+    .three-up {
+        grid-template-columns: 1fr;
+    }
+
+    .hero,
+    .section {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-4);
+    }
+
+    .company-name {
+        font-size: 1.1rem;
+    }
+}
