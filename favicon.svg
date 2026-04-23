@@ -1,19 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00ccaa;stop-opacity:1" />
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04080f" />
+      <stop offset="100%" stop-color="#0d1624" />
     </linearGradient>
+    <linearGradient id="mark" x1="8" y1="16" x2="56" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="48%" stop-color="#14d48f" />
+      <stop offset="100%" stop-color="#a3e635" />
+    </linearGradient>
+    <path id="loop" d="M8 32C8 22.4 14.8 16 24 16C31.4 16 36 24 40 28C44 24 48.6 16 56 16C65.2 16 72 22.4 72 32C72 41.6 65.2 48 56 48C48.6 48 44 40 40 36C36 40 31.4 48 24 48C14.8 48 8 41.6 8 32" transform="translate(-8 0)" />
   </defs>
-  
-  <!-- Modern geometric W shape -->
-  <path d="M 20 25 L 30 75 L 40 45 L 50 75 L 60 45 L 70 75 L 80 25" 
-        stroke="url(#gradient)" 
-        stroke-width="8" 
-        fill="none" 
-        stroke-linecap="round" 
-        stroke-linejoin="round"/>
-  
-  <!-- Accent circle for "1" or "One" -->
-  <circle cx="85" cy="25" r="5" fill="url(#gradient)"/>
+
+  <rect width="64" height="64" rx="14" fill="url(#bg)" />
+  <use href="#loop" fill="none" stroke="url(#mark)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <use href="#loop" fill="none" stroke="#09111d" stroke-width="7.4" stroke-linecap="round" stroke-linejoin="round" />
+  <use href="#loop" fill="none" stroke="url(#mark)" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
