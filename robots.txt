@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://whileone.se/sitemap.xml
+
+# LLM/agent-friendly site summary
+LLMs: https://whileone.se/llms.txt

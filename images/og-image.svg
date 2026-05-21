@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">WhileOne software testing consultancy</title>
+  <desc id="desc">Branded Open Graph preview image for WhileOne.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06111f" />
+      <stop offset="0.55" stop-color="#0b1728" />
+      <stop offset="1" stop-color="#10243a" />
+    </linearGradient>
+    <radialGradient id="logo-glow" cx="0" cy="0" r="1" gradientTransform="translate(295 315) rotate(90) scale(230 360)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#11d4b0" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#11d4b0" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="36" y="36" width="1128" height="558" rx="44" fill="none" stroke="#20354d" stroke-width="2" />
+  <circle cx="315" cy="315" r="315" fill="url(#logo-glow)" />
+  <image href="whiletrue-logo-blue-green.png" x="78" y="130" width="520" height="347" preserveAspectRatio="xMidYMid meet" />
+
+  <text x="630" y="225" fill="#eef4ff" font-family="Sora, Manrope, Segoe UI, sans-serif" font-size="74" font-weight="700" letter-spacing="-1.5">WhileOne</text>
+  <text x="634" y="292" fill="#57d7be" font-family="Manrope, Segoe UI, sans-serif" font-size="22" font-weight="800" letter-spacing="2.2">SOFTWARE TESTING CONSULTANCY</text>
+  <text x="634" y="360" fill="#d9e5f6" font-family="Manrope, Segoe UI, sans-serif" font-size="30" font-weight="500">Complex systems.</text>
+  <text x="634" y="402" fill="#d9e5f6" font-family="Manrope, Segoe UI, sans-serif" font-size="30" font-weight="500">FOSS Linux stack.</text>
+  <text x="634" y="456" fill="#afbdd3" font-family="Manrope, Segoe UI, sans-serif" font-size="26" font-weight="500">Custom tooling.</text>
+  <text x="634" y="492" fill="#afbdd3" font-family="Manrope, Segoe UI, sans-serif" font-size="26" font-weight="500">When regular testing is not enough.</text>
+</svg>

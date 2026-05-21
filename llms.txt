@@ -1,0 +1,44 @@
+# WhileOne
+
+WhileOne is a software testing consultancy with extensive FOSS Linux stack experience.
+
+We help engineering teams test complex software and systems when regular testing is not enough. We provide practical software testing strategy, test automation architecture, custom test harnesses, custom test tooling, and engineering advisory.
+
+## Primary Services
+
+- Software testing consulting
+- Test automation architecture
+- Custom test tool development
+- FOSS Linux engineering
+- Complex system validation
+- Team enablement and testing discipline
+
+## Experience
+
+WhileOne has delivered solutions for streaming, finance, networking, industrial systems, mainframe environments, big data platforms, and remote software development teams.
+
+Examples include:
+
+- Big data Hadoop monitoring for a major Swedish music streaming company
+- Mainframe system mapping for a major Swedish credit check company
+- Mainframe reference implementation and automated testing pipeline
+- Custom test harness development for a US networking technology startup
+- Slack-integrated automated end-to-end tests for a Swedish video streaming platform company
+- Testing tooling and processes for a Swedish vehicle manufacturer in a factory environment
+- Building testing discipline, technology, and teams for video streaming and data visualization companies
+
+## Website
+
+- Home: https://whileone.se/
+- Services: https://whileone.se/services.html
+- About: https://whileone.se/about.html
+- Contact: https://whileone.se/contact.html
+- Sitemap: https://whileone.se/sitemap.xml
+
+## Contact
+
+See https://whileone.se/contact.html for current contact information.
+
+## Privacy
+
+The site does not use cookies or tracking.
