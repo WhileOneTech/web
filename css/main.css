@@ -300,6 +300,8 @@ body {
 .menu-toggle:focus-visible,
 .theme-toggle:focus-visible,
 .nav-links a:focus-visible,
+.downloads-list a:focus-visible,
+.quick-downloads a:focus-visible,
 .text-link:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
@@ -361,6 +363,87 @@ h2 {
     display: flex;
     gap: var(--space-2);
     flex-wrap: wrap;
+}
+
+.download-spotlight {
+    max-width: 35rem;
+    margin-top: var(--space-4);
+}
+
+.spotlight-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.version-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    background: var(--color-surface);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.os-note,
+.fallback {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.os-note {
+    margin-top: var(--space-1);
+}
+
+.all-downloads {
+    max-width: 35rem;
+    margin-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2);
+}
+
+.all-downloads summary {
+    color: var(--color-muted);
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.all-downloads summary:hover {
+    color: var(--color-text);
+}
+
+.downloads-list {
+    display: grid;
+    gap: var(--space-1);
+    margin: var(--space-2) 0;
+}
+
+.downloads-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 0.9rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.downloads-list a:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.dl-meta {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 .section {
@@ -453,6 +536,31 @@ h2 {
     color: var(--color-muted);
 }
 
+.quick-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: var(--space-3);
+}
+
+.quick-downloads a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.45rem 0.8rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-weight: 800;
+    font-size: 0.9rem;
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.quick-downloads a:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-primary);
+}
+
 .app-card-heading {
     display: flex;
     align-items: center;
@@ -531,6 +639,74 @@ h2 {
     align-content: start;
 }
 
+.section-heading {
+    margin-bottom: var(--space-3);
+}
+
+.section-heading p:not(.eyebrow) {
+    max-width: 62ch;
+    color: var(--color-muted);
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.download-card {
+    display: grid;
+    gap: var(--space-2);
+    align-content: start;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-soft);
+}
+
+.featured-download,
+.download-card.is-detected {
+    background:
+        linear-gradient(135deg, rgba(15, 91, 216, 0.12), rgba(8, 168, 138, 0.1)),
+        var(--color-surface);
+}
+
+.platform-mark {
+    display: grid;
+    place-items: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 1.1rem;
+    background: var(--color-text);
+    color: var(--color-bg);
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.download-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+}
+
+.download-card p,
+.download-note {
+    color: var(--color-muted);
+}
+
+.package-links {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.download-note {
+    max-width: 70ch;
+    margin-top: var(--space-3);
+    font-size: 0.95rem;
+}
+
 .cta-block {
     text-align: center;
     padding-top: var(--space-5);
@@ -597,7 +773,8 @@ h2 {
     }
 
     .two-up,
-    .three-up {
+    .three-up,
+    .download-grid {
         grid-template-columns: 1fr;
     }
 
@@ -608,6 +785,11 @@ h2 {
 
     .app-card {
         align-items: start;
+    }
+
+    .downloads-list a {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .yearwheel-panel {

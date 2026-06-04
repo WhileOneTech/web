@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
-<body>
+<body data-yearwheel-downloads>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
         <nav class="site-nav" aria-label="Main navigation">
@@ -110,9 +110,14 @@
                     <div class="app-card-content">
                         <div class="app-card-heading">
                             <h3>YearWheel</h3>
-                            <span class="status-pill">Coming soon</span>
+                            <span class="status-pill"><span data-yearwheel-version>v2026.6.4</span> available</span>
                         </div>
-                        <p>A compact planning app for seeing the year at a glance. Public downloads will be published when the first release is ready.</p>
+                        <p>A compact planning app for seeing the year at a glance. Download the latest release for Windows, Mac, or Linux.</p>
+                        <div class="quick-downloads" data-yearwheel-quick-downloads aria-label="YearWheel quick downloads">
+                            <a href="https://github.com/WhileOneTech/yearwheel-releases/releases/download/v2026.6.4/YearWheel_2026.6.4%2B3_x64-setup.exe" rel="noopener" target="_blank">Windows</a>
+                            <a href="https://github.com/WhileOneTech/yearwheel-releases/releases/download/v2026.6.4/YearWheel_2026.6.4%2B3_aarch64.dmg" rel="noopener" target="_blank">Mac</a>
+                            <a href="https://github.com/WhileOneTech/yearwheel-releases/releases/download/v2026.6.4/YearWheel_2026.6.4%2B3_amd64.AppImage" rel="noopener" target="_blank">Linux</a>
+                        </div>
                         <a class="btn btn-secondary" href="/yearwheel/">Open YearWheel page</a>
                     </div>
                 </article>
@@ -126,5 +131,6 @@
     </footer>
 
     <script src="/js/main.js"></script>
+    <script src="/js/yearwheel-downloads.js"></script>
 </body>
 </html>
