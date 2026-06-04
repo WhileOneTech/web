@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads | WhileOne Apps</title>
+    <meta name="description" content="Download apps made by WhileOne, including YearWheel.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f6f8fb">
+    <link rel="canonical" href="https://whileone.se/downloads/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Downloads | WhileOne Apps">
+    <meta property="og:description" content="Apps made by WhileOne, starting with YearWheel.">
+    <meta property="og:url" content="https://whileone.se/downloads/">
+    <meta property="og:image" content="https://whileone.se/images/og-image.png">
+    <meta property="og:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://whileone.se/images/og-image.png">
+    <meta name="twitter:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script>
+        (function () {
+            var mode = 'system';
+            var resolvedTheme = 'light';
+
+            try {
+                var savedTheme = localStorage.getItem('whileone-theme');
+
+                if (savedTheme === 'system' || savedTheme === 'light' || savedTheme === 'dark') {
+                    mode = savedTheme;
+                }
+            } catch (error) {
+            }
+
+            if (mode === 'dark') {
+                resolvedTheme = 'dark';
+            } else if (mode === 'light') {
+                resolvedTheme = 'light';
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                resolvedTheme = 'dark';
+            }
+
+            document.documentElement.setAttribute('data-theme-mode', mode);
+
+            var themeColor = document.querySelector('meta[name="theme-color"]');
+
+            if (themeColor) {
+                themeColor.setAttribute('content', resolvedTheme === 'dark' ? '#0b1526' : '#f6f8fb');
+            }
+        }());
+    </script>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="logo" href="/" aria-label="WhileOne home">
+                <img src="/images/whiletrue-logo-blue-green.png" alt="WhileOne logo">
+                <span class="company-name">WhileOne</span>
+            </a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="primary-nav" class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Cycle theme mode" title="Cycle theme mode">
+                    <svg class="theme-icon-system" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3.5" y="4.5" width="17" height="11" rx="1.8"></rect>
+                        <path d="M8.5 19.5h7M12 15.5v4"></path>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.2A8.8 8.8 0 1 1 11.8 3a7 7 0 0 0 9.2 9.2z"></path>
+                    </svg>
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"></path>
+                    </svg>
+                </button>
+                <a class="btn btn-primary nav-cta" href="/contact.html">Talk to WhileOne</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-main">
+        <section class="section intro">
+            <p class="eyebrow">Downloads</p>
+            <h1>Apps made by WhileOne</h1>
+            <p class="lead">A small collection of focused tools built by WhileOne. More details and release links live on each app page.</p>
+        </section>
+
+        <section class="section app-list-section" aria-labelledby="apps-heading">
+            <h2 id="apps-heading">Available apps</h2>
+            <div class="app-list">
+                <article class="app-card">
+                    <div class="app-icon" aria-hidden="true">YW</div>
+                    <div class="app-card-content">
+                        <div class="app-card-heading">
+                            <h3>YearWheel</h3>
+                            <span class="status-pill">Coming soon</span>
+                        </div>
+                        <p>A compact planning app for seeing the year at a glance. Public downloads will be published when the first release is ready.</p>
+                        <a class="btn btn-secondary" href="/yearwheel/">Open YearWheel page</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 WhileOne. Built for speed, clarity, and results.</p>
+        <p class="privacy-note">No cookies. No tracking.</p>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
