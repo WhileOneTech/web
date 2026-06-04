@@ -436,12 +436,15 @@ h2 {
     height: 4.5rem;
     display: grid;
     place-items: center;
-    border-radius: 1.35rem;
-    background: var(--color-text);
-    color: var(--color-bg);
-    font-family: "Sora", "Segoe UI", sans-serif;
-    font-weight: 800;
-    letter-spacing: 0.03em;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 10px 28px rgba(16, 35, 63, 0.14);
+}
+
+.app-icon img {
+    display: block;
+    width: 3.8rem;
+    height: 3.8rem;
 }
 
 .app-card-content p {
@@ -502,51 +505,24 @@ h2 {
     overflow: hidden;
 }
 
-.yearwheel-mark {
-    position: relative;
+.yearwheel-wheel {
+    display: block;
     width: min(68vw, 17rem);
-    aspect-ratio: 1;
-    border: 1rem solid color-mix(in srgb, var(--color-primary) 82%, var(--color-surface));
-    border-radius: 50%;
-    background:
-        conic-gradient(from -40deg, rgba(8, 168, 138, 0.95), rgba(15, 91, 216, 0.95), rgba(8, 168, 138, 0.95));
-    box-shadow: inset 0 0 0 2.5rem var(--color-surface), 0 18px 42px rgba(16, 35, 63, 0.18);
+    height: auto;
+    filter: drop-shadow(0 18px 40px rgba(37, 99, 235, 0.28));
+    animation: yearwheel-spin 120s linear infinite;
 }
 
-.yearwheel-mark::before,
-.yearwheel-mark::after {
-    content: "";
-    position: absolute;
-    inset: 2.2rem;
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
+@keyframes yearwheel-spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.yearwheel-mark::after {
-    inset: 5.2rem;
-    background: var(--color-surface);
-}
-
-.yearwheel-mark span {
-    position: absolute;
-    left: 50%;
-    top: 0.5rem;
-    width: 2px;
-    height: calc(100% - 1rem);
-    background: color-mix(in srgb, var(--color-surface) 78%, transparent);
-    transform-origin: center;
-}
-
-.yearwheel-mark span:nth-child(2) {
-    transform: rotate(45deg);
-}
-
-.yearwheel-mark span:nth-child(3) {
-    transform: rotate(90deg);
-}
-
-.yearwheel-mark span:nth-child(4) {
-    transform: rotate(135deg);
+@media (prefers-reduced-motion: reduce) {
+    .yearwheel-wheel {
+        animation: none;
+    }
 }
 
 .release-card {
