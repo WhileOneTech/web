@@ -707,6 +707,252 @@ h2 {
     font-size: 0.95rem;
 }
 
+.yearwheel-page .page-main {
+    background:
+        radial-gradient(900px 480px at 78% 6%, rgba(45, 91, 190, 0.28), transparent 62%),
+        radial-gradient(560px 320px at 28% 16%, rgba(99, 102, 241, 0.14), transparent 68%),
+        #0b1020;
+    color: #f8fafc;
+}
+
+.yearwheel-page {
+    background: #0b1020;
+}
+
+.yearwheel-page .site-header {
+    background: rgba(11, 16, 32, 0.9);
+    border-color: #26304f;
+}
+
+.yearwheel-page .company-name,
+.yearwheel-page .nav-links a {
+    color: #b8c7f8;
+}
+
+.yearwheel-page .nav-links a:hover,
+.yearwheel-page .nav-links a[aria-current="page"] {
+    color: #ffffff;
+    border-color: #0ea5e9;
+}
+
+.yearwheel-page .menu-toggle,
+.yearwheel-page .theme-toggle {
+    border-color: #26304f;
+    background: #121933;
+    color: #eef4ff;
+}
+
+.yearwheel-page .menu-toggle span {
+    background: #eef4ff;
+}
+
+.yearwheel-page .nav-cta {
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+}
+
+.yearwheel-page .product-hero,
+.yearwheel-page .yearwheel-features,
+.yearwheel-page .download-section,
+.yearwheel-page .page-main > .section:last-of-type {
+    max-width: var(--max-width);
+}
+
+.yearwheel-page .product-hero {
+    min-height: clamp(34rem, 70vh, 46rem);
+    grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+    gap: clamp(var(--space-4), 6vw, var(--space-6));
+    padding-top: clamp(var(--space-5), 8vw, 7rem);
+    padding-bottom: var(--space-6);
+}
+
+.yearwheel-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: var(--space-4);
+    color: #ffffff;
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.yearwheel-brand img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.yearwheel-page .product-copy h1 {
+    max-width: 12ch;
+    color: #ffffff;
+    font-size: clamp(3rem, 6.5vw, 4.8rem);
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+
+.yearwheel-page .product-copy .lead {
+    max-width: 48ch;
+    color: #bfd0ff;
+    font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+}
+
+.yearwheel-page .download-spotlight {
+    margin-top: var(--space-4);
+}
+
+.yearwheel-page .spotlight-actions {
+    gap: var(--space-2);
+}
+
+.yearwheel-page .download-spotlight .btn-primary {
+    min-height: 3.55rem;
+    border-radius: 0.85rem;
+    padding: 0.95rem 1.45rem;
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+    box-shadow: 0 18px 42px -18px rgba(14, 165, 233, 0.85);
+    font-size: 1.02rem;
+}
+
+.yearwheel-page .download-spotlight .btn-primary:hover {
+    background: linear-gradient(135deg, #7477ff, #18b5f7);
+}
+
+.yearwheel-page .version-pill {
+    border-color: #26304f;
+    background: #121933;
+    color: #b8c7f8;
+}
+
+.yearwheel-page .os-note,
+.yearwheel-page .fallback,
+.yearwheel-page .download-note {
+    color: #aebce4;
+}
+
+.yearwheel-page .all-downloads {
+    border-color: #26304f;
+}
+
+.yearwheel-page .all-downloads summary {
+    color: #b8c7f8;
+}
+
+.yearwheel-page .all-downloads summary:hover {
+    color: #ffffff;
+}
+
+.yearwheel-page .downloads-list a {
+    border-color: #26304f;
+    background: #121933;
+    color: #eef4ff;
+}
+
+.yearwheel-page .downloads-list a:hover {
+    border-color: #6366f1;
+}
+
+.yearwheel-page .dl-meta {
+    color: #9aa4c7;
+}
+
+.yearwheel-page .hero-actions {
+    margin-top: var(--space-2);
+}
+
+.yearwheel-page .hero-actions .btn-secondary {
+    border-color: #26304f;
+    background: transparent;
+    color: #b8c7f8;
+}
+
+.yearwheel-page .yearwheel-panel {
+    min-height: 30rem;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.yearwheel-page .yearwheel-wheel {
+    width: min(42vw, 24rem);
+    filter: drop-shadow(0 22px 46px rgba(37, 99, 235, 0.34));
+}
+
+.yearwheel-page .yearwheel-features,
+.yearwheel-page .download-section,
+.yearwheel-page .page-main > .section:last-of-type {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+}
+
+.yearwheel-page h2 {
+    color: #ffffff;
+}
+
+.yearwheel-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.yearwheel-feature-card,
+.yearwheel-page .download-card,
+.yearwheel-page .card {
+    border: 1px solid #26304f;
+    border-radius: var(--radius-lg);
+    background: #161f3d;
+    box-shadow: none;
+}
+
+.yearwheel-feature-card {
+    padding: var(--space-3);
+}
+
+.yearwheel-feature-card h3,
+.yearwheel-page .download-card h3,
+.yearwheel-page .card h2 {
+    color: #f8fafc;
+}
+
+.yearwheel-feature-card p,
+.yearwheel-page .download-card p,
+.yearwheel-page .card p,
+.yearwheel-page .section-heading p:not(.eyebrow) {
+    color: #b8c7f8;
+}
+
+.yearwheel-page .download-card.is-detected,
+.yearwheel-page .featured-download {
+    border-color: rgba(99, 102, 241, 0.72);
+    background:
+        linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(14, 165, 233, 0.14)),
+        #161f3d;
+}
+
+.yearwheel-page .platform-mark {
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+    color: #ffffff;
+}
+
+.yearwheel-page .download-card .btn-primary {
+    border-radius: 0.85rem;
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+}
+
+.yearwheel-page .text-link {
+    color: #93c5fd;
+}
+
+.yearwheel-page .status-pill {
+    border-color: rgba(87, 215, 190, 0.45);
+    background: rgba(87, 215, 190, 0.12);
+    color: #eef4ff;
+}
+
+.yearwheel-page .site-footer {
+    border-color: #26304f;
+    background: #0b1020;
+    color: #9aa4c7;
+}
+
 .cta-block {
     text-align: center;
     padding-top: var(--space-5);
@@ -783,6 +1029,19 @@ h2 {
         grid-template-columns: 1fr;
     }
 
+    .yearwheel-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .yearwheel-page .product-hero {
+        min-height: 0;
+        padding-top: var(--space-5);
+    }
+
+    .yearwheel-page .product-copy h1 {
+        font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
     .app-card {
         align-items: start;
     }
@@ -794,6 +1053,15 @@ h2 {
 
     .yearwheel-panel {
         min-height: 18rem;
+    }
+
+    .yearwheel-page .yearwheel-panel {
+        min-height: 16rem;
+        order: -1;
+    }
+
+    .yearwheel-page .yearwheel-wheel {
+        width: min(72vw, 18rem);
     }
 
     .hero,

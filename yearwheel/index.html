@@ -72,7 +72,7 @@
     }
     </script>
 </head>
-<body data-yearwheel-downloads>
+<body class="yearwheel-page" data-yearwheel-downloads>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
         <nav class="site-nav" aria-label="Main navigation">
@@ -113,9 +113,12 @@
     <main id="main-content" class="page-main">
         <section class="section product-hero">
             <div class="product-copy">
-                <p class="eyebrow">YearWheel</p>
-                <h1>A clear view of the year, in one focused app.</h1>
-                <p class="lead">YearWheel is a compact planning app from WhileOne. The first public release is available now for Windows, Mac, and Linux.</p>
+                <div class="yearwheel-brand">
+                    <img src="/images/yearwheel-wheel-mark.svg" alt="" aria-hidden="true">
+                    <span>YearWheel</span>
+                </div>
+                <h1>See your whole year at a glance.</h1>
+                <p class="lead">YearWheel lays the entire year out as a circular calendar, so seasons, projects, campaigns and events are visible all at once.</p>
                 <div class="download-spotlight" aria-label="Recommended YearWheel download">
                     <div class="spotlight-actions">
                         <a id="primary-download" class="btn btn-primary" href="https://github.com/WhileOneTech/yearwheel-releases/releases/latest" rel="noopener" target="_blank">
@@ -140,6 +143,24 @@
             </div>
             <div class="yearwheel-panel" aria-hidden="true">
                 <img class="yearwheel-wheel" src="/images/yearwheel-wheel-mark.svg" alt="">
+            </div>
+        </section>
+
+        <section class="section yearwheel-features" aria-labelledby="yearwheel-features-heading">
+            <h2 id="yearwheel-features-heading">Built for annual planning</h2>
+            <div class="yearwheel-feature-grid">
+                <article class="yearwheel-feature-card">
+                    <h3>The big picture</h3>
+                    <p>One circular view of all 12 months so overlaps, gaps and seasonal rhythm stand out quickly.</p>
+                </article>
+                <article class="yearwheel-feature-card">
+                    <h3>Make it yours</h3>
+                    <p>Colour-coded rings and categories for campaigns, teams, terms, or personal goals.</p>
+                </article>
+                <article class="yearwheel-feature-card">
+                    <h3>Native desktop app</h3>
+                    <p>Fast and lightweight on Windows, Mac and Linux. Your data stays on your machine.</p>
+                </article>
             </div>
         </section>
 
