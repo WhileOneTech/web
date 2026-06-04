@@ -701,6 +701,11 @@ h2 {
     flex-wrap: wrap;
 }
 
+.package-links .text-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
 .download-note {
     max-width: 70ch;
     margin-top: var(--space-3);
