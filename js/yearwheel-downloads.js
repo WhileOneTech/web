@@ -37,11 +37,11 @@
         const lowerName = name.toLowerCase();
 
         if (lowerName.endsWith('-setup.exe')) {
-            return { os: 'windows', kind: 'Installer (.exe)', downloadLabel: 'EXE', weight: 1 };
+            return { os: 'windows', kind: 'Installer (.exe)', downloadLabel: 'EXE', weight: 2 };
         }
 
         if (lowerName.endsWith('.msi')) {
-            return { os: 'windows', kind: 'Installer (.msi)', downloadLabel: 'MSI', weight: 2 };
+            return { os: 'windows', kind: 'Installer (.msi)', downloadLabel: 'MSI', weight: 1 };
         }
 
         if (lowerName.endsWith('.dmg')) {

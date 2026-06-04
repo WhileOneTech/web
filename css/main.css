@@ -759,10 +759,13 @@ h2 {
 
 .yearwheel-page .product-hero {
     min-height: clamp(34rem, 70vh, 46rem);
-    grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
-    gap: clamp(var(--space-4), 6vw, var(--space-6));
+    grid-template-columns: minmax(0, 1fr);
     padding-top: clamp(var(--space-5), 8vw, 7rem);
     padding-bottom: var(--space-6);
+}
+
+.yearwheel-page .product-copy {
+    max-width: 46rem;
 }
 
 .yearwheel-brand {
