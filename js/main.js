@@ -2,7 +2,49 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initMobileMenu();
     injectEmailLink();
+    initLightbox();
 });
+
+function initLightbox() {
+    const links = document.querySelectorAll('.story-figure a.lightbox');
+
+    if (!links.length) {
+        return;
+    }
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.hidden = true;
+
+    const image = document.createElement('img');
+    image.alt = '';
+    overlay.appendChild(image);
+    document.body.appendChild(overlay);
+
+    const close = () => {
+        overlay.hidden = true;
+        document.body.style.overflow = '';
+    };
+
+    overlay.addEventListener('click', close);
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !overlay.hidden) {
+            close();
+        }
+    });
+
+    links.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            image.src = link.href;
+            image.alt = link.querySelector('img') ? link.querySelector('img').alt : '';
+            overlay.hidden = false;
+            document.body.style.overflow = 'hidden';
+        });
+    });
+}
 
 const THEME_STORAGE_KEY = 'whileone-theme';
 const THEME_MODES = ['system', 'light', 'dark'];

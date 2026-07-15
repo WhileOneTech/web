@@ -100,7 +100,7 @@
             <p>The analytics data pipeline ran daily and took the better part of a day to complete. A failure discovered late was expensive — in machine time, in engineer stress, and in missed commitments.</p>
             <p>I built custom live monitoring that watches the pipeline and alerts the moment something breaks, so problems surface early instead of at hour twenty. To make changes safe, I also constructed a production-like test environment where we could try new versions of the underlying big-data stack and new configurations before rolling them out.</p>
             <figure class="story-figure">
-                <img src="../../images/stories/pipeline-monitoring-wall.jpg" alt="Three large monitors showing live pipeline job status in green, red and blue terminal dashboards, with a rubber duck on the desk" loading="lazy">
+                <a class="lightbox" href="../../images/stories/pipeline-monitoring-wall.jpg" target="_blank" rel="noopener"><img src="../../images/stories/pipeline-monitoring-wall.jpg" alt="Three large monitors showing live pipeline job status in green, red and blue terminal dashboards, with a rubber duck on the desk" loading="lazy"></a>
                 <figcaption>The monitoring wall: every job in the pipeline, live. Debugging duck included.</figcaption>
             </figure>
             <p>Part of the work was plain data analysis too — checking that results made sense, including comparing down-sampled output against full-data-set results.</p>
