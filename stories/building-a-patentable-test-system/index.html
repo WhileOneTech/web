@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a test system worth patenting | WhileOne</title>
+    <meta name="description" content="Sometimes the right tool for continuous testing does not exist yet. So we built one — and it turned out novel enough to patent.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f6f8fb">
+    <link rel="canonical" href="https://whileone.se/stories/building-a-patentable-test-system/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Building a test system worth patenting | WhileOne">
+    <meta property="og:description" content="Sometimes the right tool for continuous testing does not exist yet. So we built one — and it turned out novel enough to patent.">
+    <meta property="og:url" content="https://whileone.se/stories/building-a-patentable-test-system/">
+    <meta property="og:image" content="https://whileone.se/images/og-image.png">
+    <meta property="og:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://whileone.se/images/og-image.png">
+    <meta name="twitter:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <script>
+        (function () {
+            var mode = 'system';
+            var resolvedTheme = 'light';
+            try {
+                var savedTheme = localStorage.getItem('whileone-theme');
+                if (savedTheme === 'system' || savedTheme === 'light' || savedTheme === 'dark') {
+                    mode = savedTheme;
+                }
+            } catch (error) {}
+            if (mode === 'dark') {
+                resolvedTheme = 'dark';
+            } else if (mode === 'light') {
+                resolvedTheme = 'light';
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                resolvedTheme = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme-mode', mode);
+            var themeColor = document.querySelector('meta[name="theme-color"]');
+            if (themeColor) {
+                themeColor.setAttribute('content', resolvedTheme === 'dark' ? '#0b1526' : '#f6f8fb');
+            }
+        }());
+    </script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="logo" href="../../index.html" aria-label="WhileOne home">
+                <img src="../../images/whiletrue-logo-blue-green.png" alt="WhileOne logo">
+                <span class="company-name">WhileOne</span>
+            </a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="primary-nav" class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../services.html">Services</a></li>
+                <li><a href="../../stories/">Stories</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Cycle theme mode" title="Cycle theme mode">
+                    <svg class="theme-icon-system" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3.5" y="4.5" width="17" height="11" rx="1.8"></rect>
+                        <path d="M8.5 19.5h7M12 15.5v4"></path>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.2A8.8 8.8 0 1 1 11.8 3a7 7 0 0 0 9.2 9.2z"></path>
+                    </svg>
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"></path>
+                    </svg>
+                </button>
+                <a class="btn btn-primary nav-cta" href="../../contact.html">Talk to WhileOne</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-main">
+        <section class="section intro">
+            <p class="eyebrow">Story · Test automation</p>
+            <h1>Building a test system worth patenting</h1>
+            <p class="story-meta">Test discipline &amp; technology · a Swedish video-streaming company</p>
+            <p class="lead">Sometimes the right tool for continuous testing does not exist yet. So we built one — and it turned out novel enough to patent.</p>
+        </section>
+
+        <section class="section">
+            <div class="prose">
+            <p>Joining as the first engineer brought in to help a development team with testing, the job was not just to write tests — it was to make testing something the whole organisation could lean on without it slowing anyone down.</p>
+            <p>The result was a model-driven continuous test automation system, built in Python on top of Appium, Selenium and a handful of small open tools. Tests were derived from models of how the product should behave, and the system was modular and plug-and-play: new capabilities and target platforms could be slotted in without rebuilding the harness each time.</p>
+            <figure class="story-figure">
+                <img src="../../images/stories/patent-device-farm.jpg" alt="Phones and tablets in a device farm running automated tests in front of CI dashboards" loading="lazy">
+                <figcaption>The system at work: a wall of target devices driven by the model-based test harness.</figcaption>
+            </figure>
+            <p>It worked well enough, and was different enough from what existed, that it became a granted patent: <a href="https://patents.google.com/patent/US9916231B2/en" rel="noopener">US&nbsp;9,916,231&nbsp;B2 — “Modular plug-and-play system for continuous model-driven testing.”</a></p>
+            <figure class="story-figure">
+                <img src="../../images/stories/patent-ci-wall.jpg" alt="Test result dashboards for Android and iOS builds next to a rack of test devices" loading="lazy">
+                <figcaption>Continuous test results for every platform, visible to the whole team.</figcaption>
+            </figure>
+            <p>More important than the patent was the effect on the team: testing branched into every part of development without adding process overhead, and we went from pitching the importance of testing to developers asking for more testers.</p>
+            </div>
+            <div class="story-tags">
+                <span>Python</span>
+                <span>Model-driven testing</span>
+                <span>Appium</span>
+                <span>Selenium</span>
+                <span>Continuous testing</span>
+                <span>Patent</span>
+            </div>
+            <a class="back-link" href="../">&larr; All stories</a>
+        </section>
+
+        <section class="section cta-block">
+            <h2>Have a system that needs this kind of attention?</h2>
+            <p>Tell us where your current testing approach breaks down. We will help you define a practical path forward.</p>
+            <a class="btn btn-primary" href="../../contact.html">Talk to WhileOne</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 WhileOne. Built for speed, clarity, and results.</p>
+        <p class="privacy-note">No cookies. No tracking.</p>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

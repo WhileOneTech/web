@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metering the AI coding tools | WhileOne</title>
+    <meta name="description" content="AI coding assistants are the new power tools — and worth using deliberately. So I proxied an undocumented API and built a live quota meter for GitHub Copilot.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f6f8fb">
+    <link rel="canonical" href="https://whileone.se/stories/pacing-the-ai-tools/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Metering the AI coding tools | WhileOne">
+    <meta property="og:description" content="AI coding assistants are the new power tools — and worth using deliberately. So I proxied an undocumented API and built a live quota meter for GitHub Copilot.">
+    <meta property="og:url" content="https://whileone.se/stories/pacing-the-ai-tools/">
+    <meta property="og:image" content="https://whileone.se/images/og-image.png">
+    <meta property="og:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://whileone.se/images/og-image.png">
+    <meta name="twitter:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <script>
+        (function () {
+            var mode = 'system';
+            var resolvedTheme = 'light';
+            try {
+                var savedTheme = localStorage.getItem('whileone-theme');
+                if (savedTheme === 'system' || savedTheme === 'light' || savedTheme === 'dark') {
+                    mode = savedTheme;
+                }
+            } catch (error) {}
+            if (mode === 'dark') {
+                resolvedTheme = 'dark';
+            } else if (mode === 'light') {
+                resolvedTheme = 'light';
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                resolvedTheme = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme-mode', mode);
+            var themeColor = document.querySelector('meta[name="theme-color"]');
+            if (themeColor) {
+                themeColor.setAttribute('content', resolvedTheme === 'dark' ? '#0b1526' : '#f6f8fb');
+            }
+        }());
+    </script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="logo" href="../../index.html" aria-label="WhileOne home">
+                <img src="../../images/whiletrue-logo-blue-green.png" alt="WhileOne logo">
+                <span class="company-name">WhileOne</span>
+            </a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="primary-nav" class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../services.html">Services</a></li>
+                <li><a href="../../stories/">Stories</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Cycle theme mode" title="Cycle theme mode">
+                    <svg class="theme-icon-system" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3.5" y="4.5" width="17" height="11" rx="1.8"></rect>
+                        <path d="M8.5 19.5h7M12 15.5v4"></path>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.2A8.8 8.8 0 1 1 11.8 3a7 7 0 0 0 9.2 9.2z"></path>
+                    </svg>
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"></path>
+                    </svg>
+                </button>
+                <a class="btn btn-primary nav-cta" href="../../contact.html">Talk to WhileOne</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-main">
+        <section class="section intro">
+            <p class="eyebrow">Story · AI tooling</p>
+            <h1>Metering the AI coding tools</h1>
+            <p class="story-meta">Developer tooling · own initiative</p>
+            <p class="lead">AI coding assistants are the new power tools — and worth using deliberately. So when GitHub Copilot would not tell me how much quota I had left, I went and asked its API directly.</p>
+        </section>
+
+        <section class="section">
+            <div class="prose">
+            <p>I work with AI coding tools daily — OpenCode, Codex, Claude — and like any tool with a bill attached, they reward being used deliberately. Copilot has a usage quota, but no useful way to watch it. You find out you are running low the way you find out a pipeline broke at hour twenty: too late.</p>
+            <p>So I put a proxy between the client and GitHub, watched the traffic, and found the undocumented API that reports quota state. On top of it I built a live-updating quota meter — a small always-visible gauge of how much Copilot I have left, which turned pacing my usage from guesswork into a glance.</p>
+            <figure class="story-figure">
+                <img src="../../images/stories/token-monitor-exhausted.jpg" alt="Terminal quota monitor showing Copilot usage at 100% with the message: Quota exhausted! You timed that almost perfectly chief" loading="lazy">
+                <figcaption>The meter, having opinions. Landing on exactly 100% the day before reset is either luck or pacing — the tool says pacing.</figcaption>
+            </figure>
+            <p>It is the same move as the pipeline monitoring wall and the mainframe map: when a system will not tell you what is going on, instrument it until it does. AI tools are not exempt.</p>
+            <figure class="story-figure">
+                <img src="../../images/stories/token-monitor-graph.jpg" alt="Terminal bar chart of daily Copilot quota consumption over two weeks, with green, yellow and red bars" loading="lazy">
+                <figcaption>Daily consumption over the cycle — the graph that turns &ldquo;how much have I used?&rdquo; into a glance.</figcaption>
+            </figure>
+            <p>Current experiment in the same spirit: using a small local LLM as a front-line worker that rightsizes requests — so the big, expensive models only get the work that actually needs them.</p>
+            </div>
+            <div class="story-tags">
+                <span>AI tooling</span>
+                <span>LLMs</span>
+                <span>Reverse engineering</span>
+                <span>Developer experience</span>
+                <span>Cost awareness</span>
+            </div>
+            <a class="back-link" href="../">&larr; All stories</a>
+        </section>
+
+        <section class="section cta-block">
+            <h2>Have a system that needs this kind of attention?</h2>
+            <p>Tell us where your current testing approach breaks down. We will help you define a practical path forward.</p>
+            <a class="btn btn-primary" href="../../contact.html">Talk to WhileOne</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 WhileOne. Built for speed, clarity, and results.</p>
+        <p class="privacy-note">No cookies. No tracking.</p>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test environments on tap | WhileOne</title>
+    <meta name="description" content="A new logistics system, one shared test environment, and a whole team waiting for it. The fix: a database per tester, and a generator to fill it.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#f6f8fb">
+    <link rel="canonical" href="https://whileone.se/stories/test-environments-on-tap/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Test environments on tap | WhileOne">
+    <meta property="og:description" content="A new logistics system, one shared test environment, and a whole team waiting for it. The fix: a database per tester, and a generator to fill it.">
+    <meta property="og:url" content="https://whileone.se/stories/test-environments-on-tap/">
+    <meta property="og:image" content="https://whileone.se/images/og-image.png">
+    <meta property="og:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://whileone.se/images/og-image.png">
+    <meta name="twitter:image:alt" content="WhileOne software testing consultancy for complex systems">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <script>
+        (function () {
+            var mode = 'system';
+            var resolvedTheme = 'light';
+            try {
+                var savedTheme = localStorage.getItem('whileone-theme');
+                if (savedTheme === 'system' || savedTheme === 'light' || savedTheme === 'dark') {
+                    mode = savedTheme;
+                }
+            } catch (error) {}
+            if (mode === 'dark') {
+                resolvedTheme = 'dark';
+            } else if (mode === 'light') {
+                resolvedTheme = 'light';
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                resolvedTheme = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme-mode', mode);
+            var themeColor = document.querySelector('meta[name="theme-color"]');
+            if (themeColor) {
+                themeColor.setAttribute('content', resolvedTheme === 'dark' ? '#0b1526' : '#f6f8fb');
+            }
+        }());
+    </script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="logo" href="../../index.html" aria-label="WhileOne home">
+                <img src="../../images/whiletrue-logo-blue-green.png" alt="WhileOne logo">
+                <span class="company-name">WhileOne</span>
+            </a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="primary-nav" class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../services.html">Services</a></li>
+                <li><a href="../../stories/">Stories</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Cycle theme mode" title="Cycle theme mode">
+                    <svg class="theme-icon-system" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3.5" y="4.5" width="17" height="11" rx="1.8"></rect>
+                        <path d="M8.5 19.5h7M12 15.5v4"></path>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.2A8.8 8.8 0 1 1 11.8 3a7 7 0 0 0 9.2 9.2z"></path>
+                    </svg>
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"></path>
+                    </svg>
+                </button>
+                <a class="btn btn-primary nav-cta" href="../../contact.html">Talk to WhileOne</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-main">
+        <section class="section intro">
+            <p class="eyebrow">Story · Test environments</p>
+            <h1>Test environments on tap</h1>
+            <p class="story-meta">Test data generation · a global logistics company</p>
+            <p class="lead">A new logistics system, one shared test environment, and a whole team queuing for it. The fix: a database per tester — and a generator to fill it with a working world.</p>
+        </section>
+
+        <section class="section">
+            <div class="prose">
+            <p>I joined as a tester on a new logistics system. Testing anything meaningful meant waiting for a shared environment in a particular state — which, on a busy team, it never was. So I pivoted: I stood up a local database server so that everyone on the team could have a test environment of their own.</p>
+            <p>An empty database is not much of a test environment, though. To make each one useful I wrote a test data generator that populates a fresh database with enough coherent data to make the whole system work — not random rows, but a small functioning world of shipments, parties, and events.</p>
+            <p>Getting the data right meant learning how the business actually works. I interviewed the business experts, studied the database schema, and encoded what I learned. The result was a library of configs and variants I could load into any environment in minutes, so testing a new scenario stopped being a scheduling problem and became a command.</p>
+            <p>The system kept evolving, and so did the generator: with every new version I made sure it tracked changes to the schema and the system logic, so the team's environments never fell behind the system they were testing. Fun times.</p>
+            </div>
+            <div class="story-tags">
+                <span>Test data generation</span>
+                <span>Databases</span>
+                <span>Test environments</span>
+                <span>Domain modelling</span>
+                <span>Logistics</span>
+            </div>
+            <a class="back-link" href="../">&larr; All stories</a>
+        </section>
+
+        <section class="section cta-block">
+            <h2>Have a system that needs this kind of attention?</h2>
+            <p>Tell us where your current testing approach breaks down. We will help you define a practical path forward.</p>
+            <a class="btn btn-primary" href="../../contact.html">Talk to WhileOne</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 WhileOne. Built for speed, clarity, and results.</p>
+        <p class="privacy-note">No cookies. No tracking.</p>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
