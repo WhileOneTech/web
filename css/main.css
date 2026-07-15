@@ -288,10 +288,21 @@ body {
     background: var(--color-surface);
 }
 
+.text-link {
+    color: var(--color-primary);
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+}
+
 .btn:focus-visible,
 .menu-toggle:focus-visible,
 .theme-toggle:focus-visible,
-.nav-links a:focus-visible {
+.nav-links a:focus-visible,
+.downloads-list a:focus-visible,
+.quick-downloads a:focus-visible,
+.text-link:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
@@ -352,6 +363,87 @@ h2 {
     display: flex;
     gap: var(--space-2);
     flex-wrap: wrap;
+}
+
+.download-spotlight {
+    max-width: 35rem;
+    margin-top: var(--space-4);
+}
+
+.spotlight-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.version-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    background: var(--color-surface);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.os-note,
+.fallback {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.os-note {
+    margin-top: var(--space-1);
+}
+
+.all-downloads {
+    max-width: 35rem;
+    margin-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2);
+}
+
+.all-downloads summary {
+    color: var(--color-muted);
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.all-downloads summary:hover {
+    color: var(--color-text);
+}
+
+.downloads-list {
+    display: grid;
+    gap: var(--space-1);
+    margin: var(--space-2) 0;
+}
+
+.downloads-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 0.9rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.downloads-list a:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.dl-meta {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 .section {
@@ -498,6 +590,477 @@ h2 {
     color: var(--color-text);
 }
 
+/* Apps / Yearwheel product pages */
+.app-list-section h2 {
+    margin-bottom: var(--space-3);
+}
+
+.app-list {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.app-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    align-items: center;
+    background:
+        linear-gradient(135deg, rgba(15, 91, 216, 0.1), rgba(8, 168, 138, 0.08)),
+        var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-soft);
+}
+
+.app-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 10px 28px rgba(16, 35, 63, 0.14);
+}
+
+.app-icon img {
+    display: block;
+    width: 3.8rem;
+    height: 3.8rem;
+}
+
+.app-card-content p {
+    max-width: 64ch;
+    margin-bottom: var(--space-3);
+    color: var(--color-muted);
+}
+
+.quick-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: var(--space-3);
+}
+
+.quick-downloads a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.45rem 0.8rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-weight: 800;
+    font-size: 0.9rem;
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.quick-downloads a:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-primary);
+}
+
+.app-card-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-1);
+}
+
+.app-card-heading h3 {
+    font-size: 1.35rem;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid color-mix(in srgb, var(--color-highlight) 45%, var(--color-border));
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    background: color-mix(in srgb, var(--color-highlight) 12%, transparent);
+    color: var(--color-text);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.product-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+    gap: var(--space-5);
+    align-items: center;
+}
+
+.product-copy h1 {
+    max-width: 14ch;
+}
+
+.yearwheel-panel {
+    min-height: 24rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: calc(var(--radius-lg) * 1.4);
+    background:
+        radial-gradient(circle at 30% 25%, rgba(8, 168, 138, 0.22), transparent 32%),
+        radial-gradient(circle at 70% 70%, rgba(15, 91, 216, 0.24), transparent 34%),
+        var(--color-surface);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+.yearwheel-wheel {
+    display: block;
+    width: min(68vw, 17rem);
+    height: auto;
+    filter: drop-shadow(0 18px 40px rgba(37, 99, 235, 0.28));
+    animation: yearwheel-spin 120s linear infinite;
+}
+
+@keyframes yearwheel-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yearwheel-wheel {
+        animation: none;
+    }
+}
+
+.release-card {
+    display: grid;
+    gap: var(--space-1);
+    align-content: start;
+}
+
+.section-heading {
+    margin-bottom: var(--space-3);
+}
+
+.section-heading p:not(.eyebrow) {
+    max-width: 62ch;
+    color: var(--color-muted);
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.download-card {
+    display: grid;
+    gap: var(--space-2);
+    align-content: start;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-soft);
+}
+
+.featured-download,
+.download-card.is-detected {
+    background:
+        linear-gradient(135deg, rgba(15, 91, 216, 0.12), rgba(8, 168, 138, 0.1)),
+        var(--color-surface);
+}
+
+.platform-mark {
+    display: grid;
+    place-items: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 1.1rem;
+    background: var(--color-text);
+    color: var(--color-bg);
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.download-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+}
+
+.download-card p,
+.download-note {
+    color: var(--color-muted);
+}
+
+.package-links {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.package-links .text-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.download-note {
+    max-width: 70ch;
+    margin-top: var(--space-3);
+    font-size: 0.95rem;
+}
+
+.yearwheel-page .page-main {
+    background:
+        radial-gradient(900px 480px at 78% 6%, rgba(45, 91, 190, 0.28), transparent 62%),
+        radial-gradient(560px 320px at 28% 16%, rgba(99, 102, 241, 0.14), transparent 68%),
+        #0b1020;
+    color: #f8fafc;
+}
+
+.yearwheel-page {
+    background: #0b1020;
+}
+
+.yearwheel-page .site-header {
+    background: rgba(11, 16, 32, 0.9);
+    border-color: #26304f;
+}
+
+.yearwheel-page .company-name,
+.yearwheel-page .nav-links a {
+    color: #b8c7f8;
+}
+
+.yearwheel-page .nav-links a:hover,
+.yearwheel-page .nav-links a[aria-current="page"] {
+    color: #ffffff;
+    border-color: #0ea5e9;
+}
+
+.yearwheel-page .menu-toggle,
+.yearwheel-page .theme-toggle {
+    border-color: #26304f;
+    background: #121933;
+    color: #eef4ff;
+}
+
+.yearwheel-page .menu-toggle span {
+    background: #eef4ff;
+}
+
+.yearwheel-page .nav-cta {
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+}
+
+.yearwheel-page .product-hero,
+.yearwheel-page .yearwheel-features,
+.yearwheel-page .download-section,
+.yearwheel-page .page-main > .section:last-of-type {
+    max-width: var(--max-width);
+}
+
+.yearwheel-page .product-hero {
+    min-height: clamp(34rem, 70vh, 46rem);
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: clamp(var(--space-5), 8vw, 7rem);
+    padding-bottom: var(--space-6);
+}
+
+.yearwheel-page .product-copy {
+    max-width: 46rem;
+}
+
+.yearwheel-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: var(--space-4);
+    color: #ffffff;
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.yearwheel-brand img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.yearwheel-page .product-copy h1 {
+    max-width: 12ch;
+    color: #ffffff;
+    font-size: clamp(3rem, 6.5vw, 4.8rem);
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+
+.yearwheel-page .product-copy .lead {
+    max-width: 48ch;
+    color: #bfd0ff;
+    font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+}
+
+.yearwheel-page .download-spotlight {
+    margin-top: var(--space-4);
+}
+
+.yearwheel-page .spotlight-actions {
+    gap: var(--space-2);
+}
+
+.yearwheel-page .download-spotlight .btn-primary {
+    min-height: 3.55rem;
+    border-radius: 0.85rem;
+    padding: 0.95rem 1.45rem;
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+    box-shadow: 0 18px 42px -18px rgba(14, 165, 233, 0.85);
+    font-size: 1.02rem;
+}
+
+.yearwheel-page .download-spotlight .btn-primary:hover {
+    background: linear-gradient(135deg, #7477ff, #18b5f7);
+}
+
+.yearwheel-page .version-pill {
+    border-color: #26304f;
+    background: #121933;
+    color: #b8c7f8;
+}
+
+.yearwheel-page .os-note,
+.yearwheel-page .fallback,
+.yearwheel-page .download-note {
+    color: #aebce4;
+}
+
+.yearwheel-page .all-downloads {
+    border-color: #26304f;
+}
+
+.yearwheel-page .all-downloads summary {
+    color: #b8c7f8;
+}
+
+.yearwheel-page .all-downloads summary:hover {
+    color: #ffffff;
+}
+
+.yearwheel-page .downloads-list a {
+    border-color: #26304f;
+    background: #121933;
+    color: #eef4ff;
+}
+
+.yearwheel-page .downloads-list a:hover {
+    border-color: #6366f1;
+}
+
+.yearwheel-page .dl-meta {
+    color: #9aa4c7;
+}
+
+.yearwheel-page .hero-actions {
+    margin-top: var(--space-2);
+}
+
+.yearwheel-page .hero-actions .btn-secondary {
+    border-color: #26304f;
+    background: transparent;
+    color: #b8c7f8;
+}
+
+.yearwheel-page .yearwheel-panel {
+    min-height: 30rem;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.yearwheel-page .yearwheel-wheel {
+    width: min(42vw, 24rem);
+    filter: drop-shadow(0 22px 46px rgba(37, 99, 235, 0.34));
+}
+
+.yearwheel-page .yearwheel-features,
+.yearwheel-page .download-section,
+.yearwheel-page .page-main > .section:last-of-type {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+}
+
+.yearwheel-page h2 {
+    color: #ffffff;
+}
+
+.yearwheel-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.yearwheel-feature-card,
+.yearwheel-page .download-card,
+.yearwheel-page .card {
+    border: 1px solid #26304f;
+    border-radius: var(--radius-lg);
+    background: #161f3d;
+    box-shadow: none;
+}
+
+.yearwheel-feature-card {
+    padding: var(--space-3);
+}
+
+.yearwheel-feature-card h3,
+.yearwheel-page .download-card h3,
+.yearwheel-page .card h2 {
+    color: #f8fafc;
+}
+
+.yearwheel-feature-card p,
+.yearwheel-page .download-card p,
+.yearwheel-page .card p,
+.yearwheel-page .section-heading p:not(.eyebrow) {
+    color: #b8c7f8;
+}
+
+.yearwheel-page .download-card.is-detected,
+.yearwheel-page .featured-download {
+    border-color: rgba(99, 102, 241, 0.72);
+    background:
+        linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(14, 165, 233, 0.14)),
+        #161f3d;
+}
+
+.yearwheel-page .platform-mark {
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+    color: #ffffff;
+}
+
+.yearwheel-page .download-card .btn-primary {
+    border-radius: 0.85rem;
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+}
+
+.yearwheel-page .text-link {
+    color: #93c5fd;
+}
+
+.yearwheel-page .status-pill {
+    border-color: rgba(87, 215, 190, 0.45);
+    background: rgba(87, 215, 190, 0.12);
+    color: #eef4ff;
+}
+
+.yearwheel-page .site-footer {
+    border-color: #26304f;
+    background: #0b1020;
+    color: #9aa4c7;
+}
+
 .cta-block {
     text-align: center;
     padding-top: var(--space-5);
@@ -564,8 +1127,49 @@ h2 {
     }
 
     .two-up,
-    .three-up {
+    .three-up,
+    .download-grid {
         grid-template-columns: 1fr;
+    }
+
+    .app-card,
+    .product-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .yearwheel-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .yearwheel-page .product-hero {
+        min-height: 0;
+        padding-top: var(--space-5);
+    }
+
+    .yearwheel-page .product-copy h1 {
+        font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
+    .app-card {
+        align-items: start;
+    }
+
+    .downloads-list a {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .yearwheel-panel {
+        min-height: 18rem;
+    }
+
+    .yearwheel-page .yearwheel-panel {
+        min-height: 16rem;
+        order: -1;
+    }
+
+    .yearwheel-page .yearwheel-wheel {
+        width: min(72vw, 18rem);
     }
 
     .hero,
