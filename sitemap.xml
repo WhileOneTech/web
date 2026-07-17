@@ -17,6 +17,14 @@
     <lastmod>2026-04-30</lastmod>
   </url>
   <url>
+    <loc>https://whileone.se/cv/</loc>
+    <lastmod>2026-06-25</lastmod>
+  </url>
+  <url>
+    <loc>https://whileone.se/cv/resume.json</loc>
+    <lastmod>2026-06-25</lastmod>
+  </url>
+  <url>
     <loc>https://whileone.se/stories/</loc>
     <lastmod>2026-06-25</lastmod>
   </url>
@@ -67,5 +75,9 @@
   <url>
     <loc>https://whileone.se/stories/pacing-the-ai-tools/</loc>
     <lastmod>2026-07-15</lastmod>
+  </url>
+  <url>
+    <loc>https://whileone.se/stories/self-service-fast-track/</loc>
+    <lastmod>2026-07-16</lastmod>
   </url>
 </urlset>

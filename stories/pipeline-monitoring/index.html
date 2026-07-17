@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom monitoring for a 20-hour data pipeline | WhileOne</title>
-    <meta name="description" content="When a daily data pipeline takes the better part of a day to run, you cannot afford to discover a break at the end of it.">
+    <meta name="description" content="A daily pipeline that runs 20 of every 24 hours, on hundreds of nodes, feeding directly into how money moves — you cannot afford to discover a break at the end of it.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#f6f8fb">
     <link rel="canonical" href="https://whileone.se/stories/pipeline-monitoring/">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Custom monitoring for a 20-hour data pipeline | WhileOne">
-    <meta property="og:description" content="When a daily data pipeline takes the better part of a day to run, you cannot afford to discover a break at the end of it.">
+    <meta property="og:description" content="A daily pipeline that runs 20 of every 24 hours, on hundreds of nodes, feeding directly into how money moves — you cannot afford to discover a break at the end of it.">
     <meta property="og:url" content="https://whileone.se/stories/pipeline-monitoring/">
     <meta property="og:image" content="https://whileone.se/images/og-image.png">
     <meta property="og:image:alt" content="WhileOne software testing consultancy for complex systems">
@@ -92,25 +92,23 @@
             <p class="eyebrow">Story · DevOps</p>
             <h1>Custom monitoring for a 20-hour data pipeline</h1>
             <p class="story-meta">Big-data monitoring · a major Swedish music-streaming company</p>
-            <p class="lead">When a daily data pipeline takes the better part of a day to run, you cannot afford to discover a break at the end of it.</p>
+            <p class="lead">A daily pipeline that runs 20 of every 24 hours, on hundreds of nodes, feeding directly into how money moves — you cannot afford to discover a break at the end of it.</p>
         </section>
 
         <section class="section">
             <div class="prose">
-            <p>The analytics data pipeline ran daily and took the better part of a day to complete. A failure discovered late was expensive — in machine time, in engineer stress, and in missed commitments.</p>
-            <p>I built custom live monitoring that watches the pipeline and alerts the moment something breaks, so problems surface early instead of at hour twenty. To make changes safe, I also constructed a production-like test environment where we could try new versions of the underlying big-data stack and new configurations before rolling them out.</p>
-            <figure class="story-figure">
-                <a class="lightbox" href="../../images/stories/pipeline-monitoring-wall.jpg" target="_blank" rel="noopener"><img src="../../images/stories/pipeline-monitoring-wall.jpg" alt="Three large monitors showing live pipeline job status in green, red and blue terminal dashboards, with a rubber duck on the desk" loading="lazy"></a>
-                <figcaption>The monitoring wall: every job in the pipeline, live. Debugging duck included.</figcaption>
-            </figure>
-            <p>Part of the work was plain data analysis too — checking that results made sense, including comparing down-sampled output against full-data-set results.</p>
-            <p>The pipeline stopped surprising us, and we could validate changes locally before touching the cluster — saving developer time and machine cost, and removing a recurring source of stress.</p>
+            <p>The pipeline ran on what was, at the time, one of Europe's largest Hadoop clusters — hundreds of compute nodes. It was a chain of large jobs where each result fed into the next, so a single failure could cascade downstream. And its output fed directly into how money moved, so accuracy and timeliness were not negotiable.</p>
+            <p>Performance was the whole game: one complete run took about 20 of the 24 hours available before the next day's data arrived. There was simply no room to discover a failure late and re-run it — so the priority was to catch breakage early.</p>
+            <p>I built custom live monitoring that watches the pipeline and alerts the moment something breaks, so problems surface at hour two, not hour twenty. To make change safe, I also constructed a production-like test environment where we could try new versions of the big-data stack, new jobs and new configurations before rolling them out to the cluster.</p>
+            <p>There was a fair bit of plain data analysis too — checking that results made sense, including comparing down-sampled output against full-data-set results.</p>
+            <p>The pipeline stopped surprising us, and changes could be validated before they ever touched the cluster — saving machine cost and developer time, removing a recurring source of stress, and protecting a deadline with real financial consequences.</p>
             </div>
             <div class="story-tags">
                 <span>Python</span>
                 <span>Hadoop</span>
                 <span>Apache Hive</span>
                 <span>Luigi</span>
+                <span>Big data</span>
                 <span>Monitoring</span>
                 <span>DevOps</span>
             </div>

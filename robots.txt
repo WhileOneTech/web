@@ -1,5 +1,59 @@
+# whileone.se — crawler policy
+#
+# Stance: "AI search only".
+#   ALLOW  bots that index for search / answer engines, surface & link to us,
+#          fetch on a user's explicit request, or render link previews.
+#   DENY   bots that crawl to build AI *training* datasets.
+#
+# Note: robots.txt is advisory — only well-behaved bots obey it. For actual
+# enforcement (verified-bot checks, blocking spoofers), put Cloudflare or a
+# similar layer in front of the site. This list also needs occasional updating
+# as operators add or rename bots.
+
+# ---- Default: open to humans and normal search engines ----
 User-agent: *
 Allow: /
+
+# ---- Allowed: AI search / answer engines, assistants, link previews ----
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Amazonbot
+User-agent: YouBot
+User-agent: facebookexternalhit
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: Slackbot-LinkExpanding
+Allow: /
+
+# ---- Denied: AI training / bulk-dataset crawlers ----
+User-agent: GPTBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: meta-externalagent
+User-agent: FacebookBot
+User-agent: Diffbot
+User-agent: Omgilibot
+User-agent: omgili
+User-agent: Timpibot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: AI2Bot
+User-agent: PanguBot
+User-agent: ImagesiftBot
+Disallow: /
 
 Sitemap: https://whileone.se/sitemap.xml
 

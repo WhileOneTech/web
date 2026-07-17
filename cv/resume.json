@@ -1,0 +1,329 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Johan Lundström",
+    "label": "Software Engineer · Test Automation · Engineering Lead",
+    "url": "https://whileone.se/cv/",
+    "summary": "A Software Engineer in Test and engineering lead who sees the gap and closes it. Across 15+ years at Spotify, Scania, Magine, Plotly and beyond, I build the tooling that catches defects before production — and often invent the tool that didn't exist yet. Patent holder. Hand me a hard quality problem and the room to solve it, and consider it handled.",
+    "location": {
+      "city": "Kalmar",
+      "countryCode": "SE",
+      "region": "Sweden"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "johanlundstroem",
+        "url": "https://www.linkedin.com/in/johanlundstroem"
+      },
+      {
+        "network": "GitHub",
+        "username": "lundstrj",
+        "url": "https://github.com/lundstrj"
+      },
+      {
+        "network": "Web",
+        "username": "WhileOne AB",
+        "url": "https://whileone.se/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Scania",
+      "position": "Test Lead, IT (consultant via WhileOne AB)",
+      "location": "Oskarshamn, Sweden",
+      "startDate": "2025-02-01",
+      "summary": "Brought in through my own company, WhileOne AB, as test lead in IT for Scania's part of a large, multi-year industrial program worth several billion SEK. The landscape spans the full IT/OT stack: PLC automation (Siemens and Rockwell, over OPC-UA), SCADA (Ignition), MES (Apriso), ERP (SAP plus an in-house system) and a growing set of Scania-specific tools that keep production running.\n\nThe work I'm proudest of is a virtual automation layer I built: it interfaces with the Area PLC and triggers its logic exactly as real field automation would. That lets us test the upper automation layer (the SCADA PLCs), connect the SCADA and MES systems, and effectively run the whole factory virtually — validating it before the physical factory is even built. It's virtual commissioning for a plant that doesn't exist yet.\n\nI work as a test lead with real engineering know-how, which lets me go deeper, understand the systems properly, and build the tooling needed for a better, faster, more modern way of testing. The guiding principle is test early, test often; and to test often, a test has to be cheap to run — which means automated, or at least heavily tool-supported. It also means results have to be easy to interpret and it has to be obvious what was actually tested, which is where the visualizations and state graphs I build come in.\n\nI've had zero test engineers at my disposal and limited spare capacity from delivery teams already busy with their own work, so my aim has been to offload them: give them testing tools and lightweight process rather than more overhead. Among other efforts, I coordinated the IT testing for a large firewall-migration project that arrived at very short notice, and have test-led across several projects.",
+      "url": "https://www.scania.com/",
+      "highlights": [
+        "By building a virtual automation layer that drives the real PLC logic, the whole factory — automation, SCADA and MES — can be validated virtually before it physically exists, de-risking a multi-billion-SEK build; combined with cheap, repeatable, well-visualized tests and lightweight process, this took testing load off busy delivery teams despite having no dedicated test engineers.",
+        "Tech: Python, Test lead, Virtual commissioning, Simulation, Test automation, Siemens & Rockwell PLC, OPC-UA, Ignition SCADA, Apriso MES, SAP ERP, OT/IT integration, Integration & E2E testing, Test visualization"
+      ]
+    },
+    {
+      "name": "Voyd",
+      "position": "Software Engineer in Test",
+      "location": "Sundsvall, Sweden (remote)",
+      "startDate": "2023-01-01",
+      "summary": "At Voyd I built the end-to-end testing for VOYD Play, a creator-focused streaming service. I started with API tests but quickly pivoted to true end-to-end, beginning with Python and Selenium and then moving to Playwright for its richer feature set. Everything was designed around the team's usability: tests are easy to run locally, results update live in Slack and as markdown in GitHub, and every failure ships with the logs you actually need — network traffic, video recordings, screenshots, and correlation links into Sentry and GCP. The same suite runs locally for developers, in CI to block breaking merges, and on a schedule for daily environment health checks. I also helped move the team toward a more Kanban way of working. Eight months in, bugs no longer reached production unless we shipped them on purpose.\n\nI also built VoydRay — a nod to StarCraft's Void Ray — a load-testing tool that puts realistic, organic load on Voyd's backend. It's a clean-room implementation of an organic-load approach I'd built before, adapted to Voyd's systems.",
+      "url": "https://voyd.tv/",
+      "endDate": "2025-02-01",
+      "highlights": [
+        "Eight months after I joined, bugs no longer reached production without us knowingly and explicitly shipping them. The team could merge with confidence that unexpected side effects wouldn't disrupt core features. One year in, quality issues were a thing of the past.",
+        "Tech: Python, Playwright, Selenium, VoydRay, Locust, Load testing, GitHub bot, Slack bot, GCP, CI, End to end"
+      ]
+    },
+    {
+      "name": "Budbee",
+      "position": "Software Engineer in Test",
+      "location": "Stockholm, Sweden (remote)",
+      "startDate": "2021-03-01",
+      "summary": "Budbee's rapid growth was straining its systems, and the team needed to know exactly when performance would start to degrade. I built Beehive, a load- and performance-testing tool that emulates the organic behaviour of an arbitrary number of Budbee consumers and drivers — putting realistic, lifelike load on the entire backend rather than blunt synthetic traffic. It's built in Python, using Locust to drive the traffic.\n\nI designed Beehive so the same API could be reused to write back-office tools, which I did — turning common manual back-office tasks into quick, automated ones both for my team and for customer-service requests. This let us plan for the future and validate new solutions before deploying to production, while quietly saving the team a lot of manual work.",
+      "url": "https://budbee.com/",
+      "endDate": "2023-02-01",
+      "highlights": [
+        "The team knew exactly how much headroom it had, and the back-office tools that fell out of Beehive meant it spent little to no time on customer-service support despite a constant flow of requests.",
+        "Tech: Python, Locust, Beehive, Load & performance testing, Organic load modeling, API, Internal tooling, AWS"
+      ]
+    },
+    {
+      "name": "Advitum",
+      "position": "Consultant",
+      "location": "Kalmar/Nybro, Sweden (remote)",
+      "startDate": "2020-11-01",
+      "summary": "Worked as a Microsoft Power Platform and SharePoint consultant.",
+      "url": "https://advitum.se/",
+      "endDate": "2021-03-01",
+      "highlights": [
+        "Tech: Microsoft Power Platform, SharePoint, Azure"
+      ]
+    },
+    {
+      "name": "Plotly",
+      "position": "Dash Solutions Team Lead (consultant via Vildly)",
+      "location": "Montreal, Canada (remote)",
+      "startDate": "2019-09-01",
+      "summary": "Consulting through my own company, Vildly, the engagement started with building data-science apps for Plotly (a Canadian company) using their Plotly Dash Python library. From there the collaboration grew, and I took over as manager of Plotly's Customer Success team — the group that helps new customers build their own Dash apps — leading six engineers in Montreal, remotely from Sweden across a six-hour time difference.\n\nMy focus was light process, tool support and collaboration. I visualized the team's backlog, made sure no one was overloaded, and gave stakeholders good-enough predictability on when their apps would be ready. When Sales wanted to fast-track an app, I made the pipeline visual enough that they could negotiate priority among themselves — so my engineers stopped being interrupted and no longer had to be the bad guy. We started doing retros and steadily changed how we worked; I ran one-on-ones with everyone every other week. As demand grew I hired more engineers and prepared the team to take on several summer interns.\n\nThings were going really well — and then COVID-19 hit, the markets turned, and the assignment ended. Two things I'm quietly proud of: the app I built is still online, and the people I hired are still there and doing very well.",
+      "url": "https://plotly.com/",
+      "endDate": "2020-03-01",
+      "highlights": [
+        "Solid hires (several still there and thriving), predictable delivery Sales and stakeholders could trust, and a visual, self-service pipeline that let Sales resolve their own priorities instead of interrupting engineers — until COVID-19 ended the engagement.",
+        "Tech: Python, Plotly Dash, Data science, Customer Success, Hiring, Remote management, Team leadership"
+      ]
+    },
+    {
+      "name": "Vildly AB",
+      "position": "Co-Founder & Consultant",
+      "location": "Kalmar, Sweden",
+      "startDate": "2019-01-01",
+      "summary": "Co-founded and ran Vildly AB, a consultancy offering data science, custom software development and everything test-related — on-site in the Kalmar region or remotely anywhere on the planet. The work that grew biggest was with Plotly in Canada: what began as building data-science apps in their Plotly Dash (Python) library turned into leading their Customer Success delivery team. Vildly also delivered Microsoft Power Platform and SharePoint work for Advitum, among other engagements.",
+      "endDate": "2025-01-01",
+      "highlights": [
+        "Tech: Python, Data science, Test automation, Custom software development, Remote delivery"
+      ]
+    },
+    {
+      "name": "Parental leave",
+      "position": "Parental leave",
+      "location": "Kalmar, Sweden",
+      "startDate": "2019-01-01",
+      "summary": "Full-time parent to twin sons. Built a lot of Lego and advanced Brio train tracks for them to enjoy and subsequently destroy.",
+      "endDate": "2019-08-01"
+    },
+    {
+      "name": "UC",
+      "position": "Software Engineer in Test (consultant)",
+      "location": "Stockholm, Sweden",
+      "startDate": "2018-03-01",
+      "summary": "UC is Sweden's hub for credit decisions. I was brought in to lead testing for a project enabling UC's IBM mainframe to handle a new data delivery from the Swedish Enforcement Authority (Kronofogden) — a large effort spanning many mainframe changes plus a new Java application. I mapped out every possible combination of system input and built tools to generate all of it together with the expected output, plus tooling to compare expected versus actual results, which became a powerful debug aid for the whole team. On my own initiative I built a tool that maps all dependencies inside the mainframe — over 40,000 of them — into a searchable, visual graph, replacing manual source-code inspection. We got most of the way to perhaps the first-ever fully automated test pipeline that included the mainframe. Testing finished on time, business acceptance passed almost without a hitch, and the system deployed as scheduled.",
+      "url": "https://www.uc.se/",
+      "endDate": "2018-12-01",
+      "highlights": [
+        "We knew the software worked as intended for every allowed input combination, could test all combinations several times a day at little to no extra cost, and the project shipped on time and without defects.",
+        "Tech: Python, Exhaustive testing, Dependency visualization, Mainframe"
+      ]
+    },
+    {
+      "name": "Frantisek Construction",
+      "position": "Process Improvement Engineer",
+      "location": "South Africa",
+      "startDate": "2015-02-01",
+      "summary": "Brought on to apply Lean and Agile ideas to small-scale house construction. To understand the process I also did hands-on construction work. Concrete improvements included centralized brick storage, mortar tables to save the bricklayers' backs, a daily post-work site tidy-up, and regular hydration rounds to keep workers healthy.",
+      "endDate": "2015-05-01",
+      "highlights": [
+        "Tech: Lean, Agile, Process improvement"
+      ]
+    },
+    {
+      "name": "Magine",
+      "position": "Software Engineer in Test → Test Practice Lead → Product Owner, Payment Flow",
+      "location": "Stockholm, Sweden",
+      "startDate": "2013-04-01",
+      "summary": "Magine was a five-year journey from first test hire to test department. I joined as the first engineer brought in to help development with testing and, under my leadership, testing branched into every part of development without adding overhead or process — we went from me pitching the importance of testing to developers asking me for more testers. I built a model-driven continuous test automation system in Python with Appium, Selenium and a handful of small open tools, which became a patented invention. I joined a struggling mobile-app team and helped turn it around to shipping weekly, with near-daily internal releases enabled by our continuous testing pipeline. I educated the whole company on how to think about testing, pushed for openness with dashboards and freely flowing metrics, and later took on product ownership of a key squad responsible for the payment flow — including running transparent salary negotiations with my team. (I also built a pair-programming chair and wired the office bathrooms to a Raspberry Pi, because we could.)",
+      "url": "https://www.maginepro.com/",
+      "endDate": "2018-03-01",
+      "highlights": [
+        "We built a fantastic testing organization that let us develop excellent software faster than ever before, and I hold a patent for the resulting model-driven continuous test automation system.",
+        "Tech: Python, Selenium, Appium, Model Driven Testing, AWS, Management, Hiring"
+      ]
+    },
+    {
+      "name": "Spotify",
+      "position": "Software Engineer in Test",
+      "location": "Stockholm, Sweden",
+      "startDate": "2012-01-01",
+      "summary": "At Spotify I focused on reliability and catching issues early. I hardened the business-critical data pipeline behind payments and analytics — the logic that determined who got paid, how much and when, across multiple markets and continents.\n\nIt ran on what was, at the time, Europe's biggest Hadoop cluster: hundreds of compute nodes. The pipeline was a chain of large jobs where each result fed into the next, so cascading errors were a real concern — and performance was critical, because one complete run took 20 of the 24 hours available before the next day's batch of data was ready. There was no room to simply re-run a failure.\n\nTo keep it reliable I built live monitoring that alerts the moment something breaks, so problems surface early instead of at hour 20, and constructed a production-like test environment where we could try new Hadoop versions, jobs and configurations before running them on the cluster. There was a fair bit of data analysis too — checking that results made sense, including comparing down-sampled output against full-data-set results. Stack: Apache Hive, Hadoop, Python, Luigi.\n\nI also started in the Web Player team and helped take it to its first public launch. (A few of us even wrote a JavaScript game that ran inside the Spotify desktop client.)",
+      "url": "https://www.spotify.com/",
+      "endDate": "2013-04-01",
+      "highlights": [
+        "Because a failed run couldn't be redone inside the 20-of-24-hour window, catching breakage early was everything. My monitoring and production-like test environment meant the pipeline stopped surprising us and changes could be validated before hitting the cluster — protecting a payments system running across markets and continents, and saving developer time, machine cost, stress, and the risk of contractual penalties.",
+        "Tech: Python, Hadoop, Apache Hive, Luigi, Big data, Model Driven Testing, Monitoring, Internal tooling"
+      ]
+    },
+    {
+      "name": "DB Schenker",
+      "position": "Software Engineer (consultant via Sogeti & SQS)",
+      "location": "Gothenburg, Sweden",
+      "startDate": "2010-09-01",
+      "summary": "Engaged via the consultancies Sogeti and SQS to work on what was, at the time, the largest IT project in Sweden. I became the go-to data person who knew the different data models inside out, analysed requirements for soundness, and — starting from a manual testing role — seized the opportunity to automate, building a test data generation pipeline in Python and SQL that let the team work and try things independently of the offshore development team. In parallel, at Sogeti I helped customers get quality out of their IT projects and build a test excellence centre.",
+      "url": "https://www.dbschenker.com/",
+      "endDate": "2012-01-01",
+      "highlights": [
+        "Tech: Python, SQL, Test automation, Test data generation"
+      ]
+    },
+    {
+      "name": "Nicira",
+      "position": "Software Engineer (internship)",
+      "location": "Palo Alto, CA, USA",
+      "startDate": "2009-05-01",
+      "summary": "My internship at Nicira, a stealth network-virtualization startup in Palo Alto, was the most educational work experience of my career. I developed and extended the in-house custom test automation harness and, because of the startup nature of the company, worked across the entire stack — from hardware debugging to high-level software design and the integration of various open source systems — mostly in Python, with some shell and PHP. Working in packet-switched networking, I became proficient at debugging networks, surrounded by people who were both exceptional and genuinely generous with their help.",
+      "url": "https://en.wikipedia.org/wiki/Nicira",
+      "endDate": "2010-04-01",
+      "highlights": [
+        "Tech: Python, Shell scripting, PHP, Networking, Open source integration"
+      ]
+    },
+    {
+      "name": "Chalmers University of Technology",
+      "position": "Software Developer Consultant",
+      "location": "Gothenburg, Sweden",
+      "startDate": "2009-01-01",
+      "summary": "After the Qualisys thesis, the university continued development and I signed on to bring a PhD student up to speed on the algorithms, codebase and setup. We wrote a paper based on the work that was accepted to the IDETC/CIE conference in San Diego.",
+      "url": "https://www.chalmers.se/",
+      "endDate": "2009-05-01",
+      "highlights": [
+        "Tech: C++, Python, Tcl/Tk, Algorithms, Research"
+      ]
+    },
+    {
+      "name": "Qualisys",
+      "position": "Thesis Worker",
+      "location": "Gothenburg, Sweden",
+      "startDate": "2008-05-01",
+      "summary": "Developed a real-time system for marker position prediction in 3D, delivering a one-button, ship-to-customer system that could bridge gaps of several seconds without the user noticing. Built in C++, Python and Tcl/Tk. The thesis became a paper accepted to the IDETC/CIE conference in San Diego, 2009.",
+      "url": "https://www.qualisys.com/",
+      "endDate": "2009-01-01",
+      "highlights": [
+        "Tech: C++, Python, Tcl/Tk, Real-time systems, 3D motion capture"
+      ]
+    },
+    {
+      "name": "Volvo Trucks",
+      "position": "Summer Intern, R&D",
+      "location": "Gothenburg, Sweden",
+      "startDate": "2007-05-01",
+      "summary": "Worked in R&D on a new graphical tool for programming the many computers in modern Volvo trucks. With access to a truck-cockpit test rig, I approached the system both as a software engineer and as an end user, finding bugs, proposing fixes, and communicating them in ways that made them easy for developers to act on. My first role in software testing.",
+      "url": "https://www.volvotrucks.com/",
+      "endDate": "2007-09-01",
+      "highlights": [
+        "Tech: Software testing, Embedded systems, Requirements analysis"
+      ]
+    },
+    {
+      "name": "Swedish Armed Forces",
+      "position": "Squad Leader, Reconnaissance Unit",
+      "location": "F17 Kallinge, Sweden",
+      "startDate": "2003-08-01",
+      "summary": "Led a squad of reconnaissance soldiers in the Air Force, tasked with finding and neutralizing hostile reconnaissance and sabotage forces. The training built discipline, attention to detail, determination and the ability to keep a cool head under pressure.",
+      "endDate": "2004-05-01",
+      "highlights": [
+        "Tech: Leadership, Discipline, Attention to detail"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Chalmers University of Technology",
+      "studyType": "MSc in Computer Science",
+      "startDate": "2004-08-01",
+      "endDate": "2011-08-01"
+    },
+    {
+      "institution": "Chalmers University of Technology",
+      "studyType": "BSc in Software Engineering",
+      "startDate": "2004-08-01",
+      "endDate": "2011-08-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages & tools",
+      "keywords": [
+        "Python",
+        "Java",
+        "C++",
+        "SQL",
+        "Bash",
+        "Git",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Testing",
+      "keywords": [
+        "End-to-end testing",
+        "API testing",
+        "Load & performance testing",
+        "Model-driven testing",
+        "Playwright",
+        "Selenium",
+        "Appium",
+        "Locust"
+      ]
+    },
+    {
+      "name": "Data & DevOps",
+      "keywords": [
+        "Hadoop",
+        "Apache Hive",
+        "Luigi",
+        "Plotly Dash",
+        "Data pipelines",
+        "Monitoring",
+        "AWS",
+        "GCP",
+        "Azure"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "keywords": [
+        "Team building",
+        "Hiring",
+        "Remote management",
+        "Product ownership"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Patent US 9,916,231 B2 — Modular plug-and-play system for continuous model-driven testing",
+      "awarder": "USPTO",
+      "url": "https://patents.google.com/patent/US9916231B2/en"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Towards Solving the Missing Marker Problem in Real-Time Motion Capture",
+      "publisher": "IDETC/CIE, San Diego",
+      "releaseDate": "2009"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native or bilingual"
+    },
+    {
+      "language": "Swedish",
+      "fluency": "Native or bilingual"
+    }
+  ],
+  "meta": {
+    "canonical": "https://whileone.se/cv/resume.json",
+    "version": "1.0.0",
+    "note": "Phone and email deliberately omitted from this public file; contact via profiles/URL or https://whileone.se/contact.html"
+  }
+}

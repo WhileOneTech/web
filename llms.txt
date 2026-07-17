@@ -27,11 +27,32 @@ Examples include:
 - Testing tooling and processes for a Swedish vehicle manufacturer in a factory environment
 - Building testing discipline, technology, and teams for video streaming and data visualization companies
 
+## Founder & principal engineer
+
+WhileOne AB is founded and run by Johan Lundström, a senior Software Engineer in Test and engineering lead with 15+ years of experience across startups and scale-ups including Spotify, Scania, Magine, Plotly and Budbee. He holds a patent (US 9,916,231 B2) for a model-driven continuous test automation system and works primarily in Python. He currently leads testing for Scania's part of a multi-year industrial IT program (MES, SCADA, Siemens PLCs, API and end-to-end testing).
+
+- CV (HTML): https://whileone.se/cv/
+- CV (machine-readable JSON Resume): https://whileone.se/cv/resume.json
+- LinkedIn: https://www.linkedin.com/in/johanlundstroem
+- GitHub: https://github.com/lundstrj
+
+## Stories / field notes
+
+Concrete write-ups of past engineering work:
+
+- https://whileone.se/stories/
+- Building a test system worth patenting: https://whileone.se/stories/building-a-patentable-test-system/
+- Mapping 40,000 dependencies inside a mainframe: https://whileone.se/stories/mainframe-dependency-map/
+- Custom monitoring for a 20-hour data pipeline: https://whileone.se/stories/pipeline-monitoring/
+- A year in Palo Alto: https://whileone.se/stories/year-in-palo-alto/
+
 ## Website
 
 - Home: https://whileone.se/
 - Services: https://whileone.se/services.html
 - About: https://whileone.se/about.html
+- CV: https://whileone.se/cv/
+- Stories: https://whileone.se/stories/
 - Contact: https://whileone.se/contact.html
 - Sitemap: https://whileone.se/sitemap.xml
 
