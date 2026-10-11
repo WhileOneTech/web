@@ -738,8 +738,6 @@ h2 {
     color: var(--color-text);
     font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
 }
 
 .product-hero {
